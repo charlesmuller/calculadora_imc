@@ -1,15 +1,14 @@
 <?php
         include 'conexao.php';
-        $sql = "SELECT * FROM `dados` WHERE id=7";
+        $sql = "SELECT * FROM dados";
         $result = $conecta->query($sql);
-        print_r($result);      
+            
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora IMC</title>
 </head>
@@ -26,5 +25,24 @@
 
         <input type="submit" value="Calcular"/>
     </form>
+    <div>
+    <table class="table" border="1">
+        <tr>
+            <td>Nome</td>
+            <td>IMC</td>
+            <td>Classificação</td>
+        </tr>
+    </table>
+    <?php
+        while($dados_usuario = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<td>" . $dados_usuario['nome'] . "</td>";
+            echo "<td>" . $dados_usuario['imc'] . "</td>";
+            echo "<td>" . $dados_usuario['classificacao'] . "</td>";
+            echo "<tr>";
+        }
+
+    ?>
+    </div>
 </body>
 </html>
