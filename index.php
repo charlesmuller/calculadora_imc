@@ -1,6 +1,10 @@
 <?php
-include("conexao.php");
+        include 'conexao.php';
+        $sql = "SELECT * FROM `dados` WHERE id=7";
+        $result = $conecta->query($sql);
+        print_r($result);      
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,12 +19,12 @@ include("conexao.php");
         <input type="text" name="nome"><br/>
 
         <label>Altura:</label><br/>
-        <input type="number" name="altura"><br/>
+        <input type="double" name="altura"><br/>
 
         <label>Peso:</label><br/>
-        <input type="number" name="peso"><br/><br/>
+        <input type="double" name="peso"><br/><br/>
 
-        <button>Calcular</button>
+        <input type="submit" value="Calcular"/>
     </form>
 </body>
 </html>

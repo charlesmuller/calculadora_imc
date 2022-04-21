@@ -7,7 +7,25 @@ $base = "imc_db";
 
 
 
-$mysqli = new mysqli($hostname, $user, $pass, $base);
-if ($mysqli -> connect_errno) {
-    echo "Falha ao conectar no banco de dados: (" . $mysqli -> connect_errno .") " . $mysql -> connect_error;
-}
+$conecta = mysqli_connect($hostname, $user, $pass, $base) or die ("Falha ao conectar no banco de dados");
+
+if(isset($_GET['nome']) and isset($_GET['altura']) and isset($_GET['peso'])){
+    $nome   = $_GET['nome'];
+    $altura = $_GET['altura'];
+    $peso   = $_GET['peso'];
+
+    $imc = $peso / ($altura * $altura);
+    $aux = $imc;
+    
+    if($aux < 18.5){
+        $classificacao = "Abaixo do peso";
+    }elseif($aux >= 18.5 and $aux <= 24.9){
+        $classificacao = "Peso ideal";
+    }else{
+    $classificacao = "Acima do peso";
+    }
+    
+    $query = mysqli_query($conecta, "INSERT INTO dados (nome,imc,classificacao) VALUES ('$nome', '$imc', '$classificacao')");
+
+    echo "Nome: " . $nome . "<br/>" . "IMC: " . $imc . "<br/>" . "Classificação: " . $classificacao;
+    }
