@@ -5,8 +5,6 @@ $user = "root";
 $pass = "";
 $base = "imc_db";
 
-
-
 $conecta = mysqli_connect($hostname, $user, $pass, $base) or die ("Falha ao conectar no banco de dados");
 
 if(isset($_GET['nome']) and isset($_GET['altura']) and isset($_GET['peso'])){
@@ -26,6 +24,7 @@ if(isset($_GET['nome']) and isset($_GET['altura']) and isset($_GET['peso'])){
     }
     
     $query = mysqli_query($conecta, "INSERT INTO dados (nome,imc,classificacao) VALUES ('$nome', '$imc', '$classificacao')");
-
-    echo "Nome: " . $nome . "<br/>" . "IMC: " . $imc . "<br/>" . "Classificação: " . $classificacao;
-    }
+    
+    header('Location: index.php');
+}
+?>
