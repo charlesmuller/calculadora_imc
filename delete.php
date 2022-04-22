@@ -2,7 +2,7 @@
 
 if(!empty($_GET['id'])){
 
-    include('conexao.php');
+    include_once('conexao.php');
 
     $id = $_GET['id'];
 

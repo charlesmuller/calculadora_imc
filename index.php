@@ -1,5 +1,5 @@
 <?php
-        include 'conexao.php';
+        include('conexao.php');
         $sql = "SELECT * FROM dados";
         $result = $conecta->query($sql);
             
