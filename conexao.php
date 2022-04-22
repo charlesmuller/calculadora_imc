@@ -27,4 +27,6 @@ $conecta = mysqli_connect($hostname, $user, $pass, $base) or die ("Falha ao cone
                 
                         header('Location: index.php');                
             }
+
+            
 ?>
