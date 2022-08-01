@@ -19,3 +19,8 @@
 - Se não for possível clonar os arquivos na pasta htdocs, será necessário mudar as permissões da pasta;
 - Para mudar as permissões da pasta vá até a pasta "outros locais" dentro dos arquivos do linux, depois clique em "computador" e depois acesse /opt/lamp > clique direito dentro da pasta lampp e selecione abrir com terminal e no terminal digite: sudo chmod 777 htdocs -R;
 - Abrir o navegador em localhost:8080/calculadora_imc.
+
+### Outra Opção para Linux:
+
+- Acessar pelo terminal o diretório do projeto clonado e rodar: php -S localhost:9000
+- Abrir o navegador e digitar: localhost:9000
