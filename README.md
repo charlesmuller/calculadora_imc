@@ -12,6 +12,11 @@
 
 ### Para executar em linux:
 
+- Acessar pelo terminal o diretório do projeto clonado e rodar: php -S localhost:9000
+- Abrir o navegador e digitar: localhost:9000
+
+### Outra Opção para Linux:
+
 - Baixar xampp (https://www.apachefriends.org/pt_br/download.html) para linux;
 - Após baixado o arquivo vá na pasta downloads e clique com o botão direito do mouse e "abrir no terminal", após escreva o comando: chmod 755 xampp-linux-*-installer.run e pressione enter. Em seguida escreva o comando: sudo ./xampp-linux-*-installer.run e pressione enter, o wizard de instalação irá surgir para instalar corretamente.
 - No xampp ativar o apache (se tiver problemas ao ativar o apache, vá na guia "manage servers" > clique sobre "apache web server" > configure > e altere a porta para 8080;
@@ -20,7 +25,5 @@
 - Para mudar as permissões da pasta vá até a pasta "outros locais" dentro dos arquivos do linux, depois clique em "computador" e depois acesse /opt/lamp > clique direito dentro da pasta lampp e selecione abrir com terminal e no terminal digite: sudo chmod 777 htdocs -R;
 - Abrir o navegador em localhost:8080/calculadora_imc.
 
-### Outra Opção para Linux:
 
-- Acessar pelo terminal o diretório do projeto clonado e rodar: php -S localhost:9000
-- Abrir o navegador e digitar: localhost:9000
+
